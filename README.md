@@ -141,7 +141,6 @@ preds = (probs >= THRESHOLD).astype(int)
 ## More Visuals (Appendix)
 
 #### These support operational discussions and planning:
-**Precision & Recall vs Threshold (Sweep)**  
 
 **Precision & Recall vs Threshold (Sweep)**  
 <img src="visuals/threshold_sweep_precision_recall.png" alt="Precision and Recall vs decision threshold; dots mark 0.58 and 0.40 operating points" width="500"/>  
