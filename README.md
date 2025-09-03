@@ -43,16 +43,17 @@ Early engagement and consistent usage dominate:
 
 ### Key Visuals
 **Precision–Recall Curve (Test) with operating points**  
-![Precision–Recall Curve for XGBoost on test data with marked operating thresholds](visuals/pr_curve_xgb_test.png)  
+<img src="visuals/pr_curve_xgb_test.png" alt="Precision–Recall Curve for XGBoost on test data with marked operating thresholds" width="500"/>  
 *Operating at ~0.58 (≈50% recall, ≈35% precision). Optional 0.40 tier lifts recall to ≈73%.*
 
 **Confusion Matrix (Test @ ~0.58)**  
-![Confusion matrix for XGBoost on test data at threshold 0.58 showing TP/FP/TN/FN counts](visuals/cm_xgb_test_thr058.png)  
+<img src="visuals/cm_xgb_test_thr058.png" alt="Confusion matrix for XGBoost on test data at threshold 0.58 showing TP/FP/TN/FN counts" width="500"/>  
 *Makes trade-offs tangible (true/false positives/negatives in counts).*
 
 **Top Feature Importances (XGBoost, Top 12)**  
-![Top 12 feature importances from the XGBoost model (days since onboarding, recent sessions, favorites, etc.)](visuals/feat_importance_xgb_top12.png)  
+<img src="visuals/feat_importance_xgb_top12.png" alt="Top 12 feature importances from the XGBoost model (days since onboarding, recent sessions, favorites, etc.)" width="500"/>  
 *Explains why users are flagged — supports product/marketing interventions.*
+
 
 ---
 
@@ -141,11 +142,13 @@ preds = (probs >= THRESHOLD).astype(int)
 
 #### These support operational discussions and planning:
 **Precision & Recall vs Threshold (Sweep)**  
-![Precision and Recall vs decision threshold; dots mark 0.58 and 0.40 operating points](visuals/threshold_sweep_precision_recall.png)  
+
+**Precision & Recall vs Threshold (Sweep)**  
+<img src="visuals/threshold_sweep_precision_recall.png" alt="Precision and Recall vs decision threshold; dots mark 0.58 and 0.40 operating points" width="500"/>  
 *Shows how precision falls as recall rises when we lower the threshold. The markers indicate our chosen operating point (~0.58) and the optional light-touch tier (0.40), helping stakeholders pick an explicit trade-off.*
 
 **Risk Tiers Distribution (Test)**  
-![Bar chart of user counts by risk tier: high (≥0.58), medium (0.40–0.58), low (<0.40)](visuals/risk_tiers_bar.png)  
+<img src="visuals/risk_tiers_bar.png" alt="Bar chart of user counts by risk tier: high (≥0.58), medium (0.40–0.58), low (<0.40)" width="500"/>  
 *Quantifies expected outreach volume at each tier. Useful for planning message cadence, channel mix, and budget under the selected thresholds.*
 
 ## License
