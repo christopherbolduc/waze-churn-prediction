@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.json
+*.db
+
+# Model artifacts
+*.pkl
+*.joblib
+*.h5
+*.model
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VS Code settings
+.vscode/
+
+# Python virtual environment
+pip-log.txt
+pip-delete-this-directory.txt
+
+# MacOS / Linux system files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook conversion outputs
+*.nbconvert.ipynb
+
+# Streamlit and other logs
+*.log
+.cache/
+
+# Ignore test outputs or temporary folders
+__tests__/
+tmp/
+temp/
+*.tmp
