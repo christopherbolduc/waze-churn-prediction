@@ -4,15 +4,15 @@
 
 # Waze Churn Prediction Project
 
-## 📌 Business Case
+## Business Case
 User churn impacts engagement, ad revenue, and acquisition costs. The goal is to identify users at risk of churn early enough to trigger targeted, cost-effective retention actions.
 
-## 🎯 Objective
+## Objective
 Build a practical, explainable churn model and choose an operating threshold that aligns with business priorities (recall-first), then translate insights into **actionable outreach tiers**.
 
-## 🔧 What We Built
+## What We Built
 
-### ✅ Champion Model & Operating Point
+### Champion Model & Operating Point
 - **Champion:** XGBoost (selected over Random Forest on a recall-first objective).
 - **Default 0.50 threshold (test):** Precision **0.312**, Recall **0.606**, F1 **0.412**, Accuracy **0.693**, ROC AUC **0.721**, PR AUC **0.354**.
 - **Operational threshold (chosen):** **~0.58** (from PR curve) → Precision **0.346**, Recall **0.501**, F1 **0.409**, Accuracy **0.743**.  
@@ -22,7 +22,7 @@ Build a practical, explainable churn model and choose an operating threshold tha
 > Note: AUC metrics (ROC/PR) are **threshold-independent**; they remain ~0.72 / ~0.35 across operating points.
 
 
-### 🧾 Model Card (Key Metrics)
+### Model Card (Key Metrics)
 
 | Split      | Model       | Threshold | Precision | Recall | F1    | Accuracy | ROC AUC | PR AUC |
 |-----------:|:------------|:----------|----------:|------:|------:|---------:|--------:|-------:|
@@ -34,14 +34,14 @@ Build a practical, explainable churn model and choose an operating threshold tha
 
 > **Takeaway:** Threshold selection is a business lever. We adopted **~0.58** for a balanced launch; add **0.40** as a light-touch tier when outreach is cheap (e.g., banners/email).
 
-### 🧠 Key Drivers (Feature Importance)
+### Key Drivers (Feature Importance)
 Early engagement and consistent usage dominate:
 - **Days since onboarding** (first **60–90 days** are critical)
 - **Recent session intensity** (e.g., `percent_sessions_in_last_month`)
 - **Favorites usage** (e.g., `ratio_of_favorite_navigations_to_drives`)
 - Additional engineered ratios capturing behavior over time
 
-### 🖼️ Key Visuals
+### Key Visuals
 **Precision–Recall Curve (Test) with operating points**  
 ![Precision–Recall Curve for XGBoost on test data with marked operating thresholds](visuals/pr_curve_xgb_test.png)  
 *Operating at ~0.58 (≈50% recall, ≈35% precision). Optional 0.40 tier lifts recall to ≈73%.*
@@ -56,22 +56,22 @@ Early engagement and consistent usage dominate:
 
 ---
 
-## 📊 Data
+## Data
 - **Source:** Synthetic Waze user data provided by the course  
 - **Features:** Session frequency, driving behavior, trip types, in-app interactions + engineered ratios (e.g., `percent_sessions_in_last_month`, `ratio_of_favorite_navigations_to_drives`, `km_per_hour`)  
 - **Privacy:** Synthetic dataset; no PII processed.
 
-## 🚀 Project Stages (PACE Framework)
+## Project Stages (PACE Framework)
 - **Plan:** Define business problem, stakeholders, and project scope  
 - **Analyze:** Explore the data and identify patterns  
 - **Construct:** Build predictive models to identify churn  
 - **Execute:** Deliver insights, visualizations, and business recommendations
 
-## 📄 Proposal Documents
+## Proposal Documents
 - [Markdown version](proposal/waze_proposal.md)  
 - [PDF version](proposal/waze_proposal.pdf)
 
-## 📁 Folder Structure
+## Folder Structure
 ```
 waze-churn-prediction/
 ├── data/                           # Raw & Cleaned data
@@ -101,12 +101,12 @@ waze-churn-prediction/
 ```
 
 
-## 🛠️ Tools
+## Tools
 - **Language:** Python  
 - **Libraries:** Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn  
 - **Environment:** Jupyter
 
-## ⚙️ Scoring New Data (Example)
+## Scoring New Data (Example)
 
 ```python
 import pickle
@@ -120,7 +120,7 @@ xgb_best = xgb_cv.best_estimator_
 probs = xgb_best.predict_proba(new_X)[:, 1]
 preds = (probs >= THRESHOLD).astype(int)
 ```
-## ⚖️ Ethical Use & Monitoring
+## Ethical Use & Monitoring
 
 - **Purpose & proportionality:** Use the model to *reduce missed churners* and improve user experience—not to justify intrusive contact or unrelated targeting.
 - **Threshold accountability:** Operating thresholds directly control false positives/negatives. Review them with stakeholders (Product, Marketing, Legal) and document the rationale for changes.
@@ -131,13 +131,13 @@ preds = (probs >= THRESHOLD).astype(int)
 
 > Tested with Python 3.10, scikit-learn 1.4, and XGBoost 2.0 in VS Code (Jupyter extension).
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 - Built as part of the **Google Advanced Data Analytics Professional Certificate**.
 - Thanks to the course authors for the **synthetic Waze-like dataset** and project scaffolding used to structure this work.
 - “Waze” is a trademark of its respective owner. This project is for educational purposes and is **not affiliated with or endorsed by Waze**.
 
-## 📎 More Visuals (Appendix)
+## More Visuals (Appendix)
 
 #### These support operational discussions and planning:
 **Precision & Recall vs Threshold (Sweep)**  
