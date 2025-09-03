@@ -51,7 +51,7 @@ Early engagement and consistent usage dominate:
 *Makes trade-offs tangible (true/false positives/negatives in counts).*
 
 **Top Feature Importances (XGBoost, Top 12)**  
-<img src="visuals/feat_importance_xgb_top12.png" alt="Top 12 feature importances from the XGBoost model (days since onboarding, recent sessions, favorites, etc.)" width="500"/>  
+<img src="visuals/feat_importance_xgb_top12.png" alt="Top 12 feature importances from the XGBoost model (days since onboarding, recent sessions, favorites, etc.)" width="600"/>  
 *Explains why users are flagged — supports product/marketing interventions.*
 
 
