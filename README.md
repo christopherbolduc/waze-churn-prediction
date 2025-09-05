@@ -32,7 +32,7 @@ Build a practical, explainable churn model and choose an operating threshold tha
 | **Test**   | **XGBoost** | **~0.58** | **0.346** | **0.501** | **0.409** | **0.743** | **0.721** | **0.354** |
 | Test       | XGBoost     | 0.40      | 0.276     | 0.732 | 0.401 | 0.612    | 0.721   | 0.354  |
 
-> **Takeaway:** Threshold selection is a business lever. We adopted **~0.58** for a balanced launch; add **0.40** as a light-touch tier when outreach is cheap (e.g., banners/email).
+> **Takeaway:** Threshold selection is a business lever. We adopted **~0.58** for a balanced launch; add **0.40** as a light-touch tier when outreach is low-cost (e.g., banners/email).
 
 ### Key Drivers (Feature Importance)
 Early engagement and consistent usage dominate:
@@ -136,7 +136,7 @@ preds = (probs >= THRESHOLD).astype(int)
 
 - Built as part of the **Google Advanced Data Analytics Professional Certificate**.
 - Thanks to the course authors for the **synthetic Waze-like dataset** and project scaffolding used to structure this work.
-- “Waze” is a trademark of its respective owner. This project is for educational purposes and is **not affiliated with or endorsed by Waze**.
+- "Waze" is a trademark of its respective owner. This project is for educational purposes and is **not affiliated with or endorsed by Waze**.
 
 ## More Visuals (Appendix)
 
