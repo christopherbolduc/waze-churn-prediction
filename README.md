@@ -77,22 +77,18 @@ Early engagement and consistent usage dominate:
 ### Key Visuals
 **Precision–Recall Curve (Test) with operating point**
 <img src="visuals/pr_curve_final.png" alt="Precision–Recall Curve for XGBoost on test data with frozen operating point at ~0.575" width="500"/>
-
 *Operating at ~0.575 (≈34% precision, ≈52% recall)*
 
 **Confusion Matrix (Test @ ~0.575)**
 <img src="visuals/confusion_matrix_final.png" alt="Confusion matrix for XGBoost on test at threshold ~0.575 showing TP/FP/TN/FN counts" width="500"/>
-
 *Makes trade-offs tangible: TP 263, FP 501, FN 244, TN 1852*
 
 **Top Feature Importances (XGBoost, Top 10, F-score)**
 <img src="visuals/feature_importance_weight.png" alt="Top 15 feature importances by F-score (split frequency): early tenure, recent sessions, favorites, engineered ratios" width="500"/>
-
 *Explains why users are flagged; supports product/marketing interventions*
 
 **Risk Tiers Distribution (Test)**
 <img src="visuals/risk_tiers_bar.png" alt="Bar chart of user percentages by risk tier: high (≥0.602), medium (0.575–0.602), low (<0.575)" width="500"/>
-
 *Tiers derived from validation-picked thresholds; quantifies outreach volume under the frozen policy*
 
 ---
